@@ -1,0 +1,83 @@
+r"""
+\documentclass[]{deedy-resume-reversed}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\begin{document}
+\namesection{{{{ name }}}}{ 
+\href{mailto:{{ email }}}{{ email }} | \href{tel:{{ phone_raw }}}{{ phone }}
+}
+\begin{minipage}[t]{0.60\textwidth}
+\section{Experience}
+{{#experience}}
+\runsubsection{{{{ company }}}}
+\descript{| {{{{ position }}}} }
+\location{{{{ dates }}} | {{{{ location }}}}}
+\vspace{\topsep}
+\begin{tightemize}
+{{#highlights}}
+\item {{{.}}}
+{{/highlights}}
+\end{tightemize}
+\sectionsep
+{{/experience}}
+
+\section{Projects}
+{{#projects}}
+\runsubsection{{{{ name }}}}
+\descript{| {{{{ description }}}}}
+\location{{{{ dates }}} | {{{{ location }}}}}
+\begin{tightemize}
+{{#highlights}}
+\item {{{.}}}
+{{/highlights}}
+\end{tightemize}
+\sectionsep
+{{/projects}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.33\textwidth}
+\section{Education}
+{{#education}}
+\subsection{{{{ school }}}}
+\descript{{{{ degree }}}}
+\location{{{{ dates }}} | {{{{ location }}}}}
+{{#notes}}
+{{.}} \\
+{{/notes}}
+\sectionsep
+{{/education}}
+
+\section{Skills}
+{{#skills}}
+\subsection{{{{ category }}}}
+{{#entries}}
+\location{{{{ label }}}:}
+{{{ technologies }}} \\
+{{/entries}}
+\sectionsep
+{{/skills}}
+
+\section{Coursework}
+{{#coursework}}
+\subsection{{{{ level }}}}
+{{#courses}}
+{{{.}}} \\
+{{/courses}}
+\sectionsep
+{{/coursework}}
+
+\section{Societies}
+{{#societies}}
+{{{.}}} \\
+{{/societies}}
+\sectionsep
+
+\section{Links}
+Github:// \href{https://github.com/{{ github }}}{\bf {{ github }}} \\
+LinkedIn:// \href{https://www.linkedin.com/in/{{ linkedin }}}{\bf {{ linkedin }}}
+\sectionsep
+\end{minipage}
+\end{document}
+"""
+
